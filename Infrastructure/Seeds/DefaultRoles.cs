@@ -8,7 +8,7 @@ namespace Infrastructure.Seeds
 {
     public static class DefaultRoles
     {
-        public static async Task SeedAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public static async Task SeedAsync(RoleManager<IdentityRole> roleManager)
         {
             if (!await roleManager.RoleExistsAsync(Roles.SuperAdmin.ToString()))
             {

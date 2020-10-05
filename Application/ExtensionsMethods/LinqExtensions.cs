@@ -8,7 +8,7 @@ namespace Application.Extensions
     public static class LinqExtensions
     {
 
-        public static async Task<IEnumerable<T>> ToListAsync<T>(this IQueryable<T> query, int PageNumber, int PageSize)
+        public static async Task<List<T>> ToListAsync<T>(this IQueryable<T> query, int PageNumber, int PageSize)
         {
 
             return await query.Skip((PageNumber - 1) * PageSize)
@@ -16,11 +16,11 @@ namespace Application.Extensions
 
         }
 
-        public static IEnumerable<T> ToList<T>(this IQueryable<T> query, int PageNumber, int PageSize)
+        public static List<T> ToList<T>(this IQueryable<T> query, int PageNumber, int PageSize)
         {
 
             return query.Skip((PageNumber - 1) * PageSize)
-                        .Take(PageSize);
+                        .Take(PageSize).ToList();
 
         }
 

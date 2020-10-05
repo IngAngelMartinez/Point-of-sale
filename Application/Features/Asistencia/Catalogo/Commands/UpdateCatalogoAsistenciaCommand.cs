@@ -35,18 +35,8 @@ namespace Application.Features.Asistencia.Catalogo.Commands
         public async Task<Response<int>> Handle(UpdateCatalogoAsistenciaCommand request, CancellationToken cancellationToken)
         {
 
-            //var catalogoAsistencia = mapper.Map<CatalogoAsistencia>(request);
-            //context.Entry(catalogoAsistencia).State = EntityState.Modified;
-
-            var catalogoAsistencia = await context.CatalogoAsistencia.FirstAsync(T => T.Id == request.Id);
-
-            if (catalogoAsistencia == null)
-            {
-                throw new ApiException("Not Found");
-            }
-
-            catalogoAsistencia.Descripcion = request.Descripcion;
-
+            var catalogoAsistencia = mapper.Map<CatalogoAsistencia>(request);
+            context.Entry(catalogoAsistencia).State = EntityState.Modified;
             await context.SaveChangesAsync(cancellationToken);
 
             return new Response<int>(catalogoAsistencia.Id);

@@ -1,20 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using API.Middleware;
 using Application;
-using Application.Features.Asistencia.Catalogo.Queries;
-using FluentValidation.AspNetCore;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace API
 {
@@ -31,7 +23,7 @@ namespace API
         {
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
-            services.AddControllers().AddFluentValidation();
+            services.AddControllers();
             services.AddHealthChecks();
         }
 

@@ -27,10 +27,10 @@ namespace Application.Behaviours
             foreach (PropertyInfo prop in props)
             {
                 object propValue = prop.GetValue(request, null);
-                requestResponse+= $"\t\t{prop.Name} : {propValue}\n";
+                requestResponse += $"\t\t{prop.Name} : {propValue}\n";
             }
             var response = await next();
-            //Response
+
             _logger.LogInformation(requestResponse);
             return response;
         }

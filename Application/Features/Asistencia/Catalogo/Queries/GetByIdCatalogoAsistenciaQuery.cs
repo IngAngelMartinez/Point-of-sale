@@ -33,7 +33,6 @@ namespace Application.Features.Asistencia.Catalogo.Queries
         public async Task<Response<CatalogoAsistenciaDTO>> Handle(GetByIdCatalogoAsistenciaQuery request, CancellationToken cancellationToken)
         {
             var catalogoAsistencia = await context.CatalogoAsistencia.FirstOrDefaultAsync(T => T.Id == request.Id);
-            if (catalogoAsistencia == null) throw new ApiException("Not Found");
             var response = mapper.Map<CatalogoAsistenciaDTO>(catalogoAsistencia);
 
             return new Response<CatalogoAsistenciaDTO>(response);

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Filters;
 using Application.Features.Asistencia.Catalogo.Commands;
 using Application.Features.Asistencia.Catalogo.Queries;
+using Application.Wrappers;
 
 namespace API.Controllers
 {
@@ -33,11 +34,14 @@ namespace API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, UpdateCatalogoAsistenciaCommand command)
         {
-            if (id != command.Id) return BadRequest();
+            if (id != command.Id)
+            {
+                return BadRequest(new Response<string>("Id is not the same as the request."));
+            }
             return Ok(await Mediator.Send(command));
         }
 
-        [Authorize(Roles = "ADMIN")]
+        //[Authorize(Roles = "ADMIN")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id) 
         {

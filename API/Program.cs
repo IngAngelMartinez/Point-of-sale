@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -16,7 +14,7 @@ namespace API
     {
         public static async Task Main(string[] args)
         {
-            var config = new ConfigurationBuilder()
+            new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .Build();
             var host = CreateHostBuilder(args).Build();
@@ -31,7 +29,7 @@ namespace API
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-                    await Infrastructure.Seeds.DefaultRoles.SeedAsync(userManager, roleManager);
+                    await Infrastructure.Seeds.DefaultRoles.SeedAsync(roleManager);
                     await Infrastructure.Seeds.DefaultSuperAdmin.SeedAsync(userManager, roleManager);
 
                 }

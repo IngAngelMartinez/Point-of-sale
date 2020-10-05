@@ -29,7 +29,6 @@ namespace Application.Features.Asistencia.Catalogo.Commands
         {
 
             var catalogoAsistencia = await context.CatalogoAsistencia.FirstOrDefaultAsync(T => T.Id == request.Id);
-            if (catalogoAsistencia == null) throw new ApiException("Not Found");
 
             context.CatalogoAsistencia.Remove(catalogoAsistencia);
             await context.SaveChangesAsync(cancellationToken);
