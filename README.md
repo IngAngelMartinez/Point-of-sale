@@ -96,7 +96,7 @@ Set start project 'API' and run with Kestrel, no with IIS.
 ### Import request in postman
 - Click in button 'Import'
 - Push in Upload Files
-- Select  CleanCQRS\Account API.postman_collection
+- Select  CleanCQRS\API Point of sale.postman_collection
 
 
 ## Contributing

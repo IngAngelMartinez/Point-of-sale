@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "841ac5d6-31b2-4fad-b299-98ee047c1567",
+		"name": "API Point of sale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Manage Users",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"noenviarspaaam@gmail.com\",\r\n    \"Password\": \"SuperP@ssword1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/Api/Account/authenticate",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"Account",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\":\"Ángel\",\r\n    \"ApellidoPaterno\":\"Martínez\",\r\n    \"ApellidoMaterno\":\"Sánchez\",\r\n    \"Email\":\"noenviarspaaam@gmail.com\",\r\n    \"UserName\":\"TheSpamer\",\r\n    \"Password\":\"SuperP@ssword1234\",\r\n    \"ConfirmPassword\":\"SuperP@ssword1234\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/Api/Account/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"Account",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"noenviarspaaam@gmail.com\",\r\n    \"Password\": \"ConchaTuMadre@1\",\r\n    \"ConfirmPassword\": \"ConchaTuMadre@1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/account/reset-password/?token=CfDJ8BrLTGCAu5pIlI6KST6hnuXZkfW8-lj1ReLGW5iuGbfjvhLDU-tAYXO5LmW-Ki0daqVsJtoev7P2wYWMBEMOaImoAoB8QK3gcqQlTTlu17-fHV6b4xIOoKhWQ8Zg4Oo-QvYt6u-qiMZ5IUV5Rzrn%2BoFweagragjt5bMO7BZ6UM-BJbUceRW3-7lNasmiOwRb4qf0k2U5AsQn45ytjRj6CK3v6YuBFB-i%2BE00vDuJ8RLL",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"account",
+								"reset-password",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "CfDJ8BrLTGCAu5pIlI6KST6hnuXZkfW8-lj1ReLGW5iuGbfjvhLDU-tAYXO5LmW-Ki0daqVsJtoev7P2wYWMBEMOaImoAoB8QK3gcqQlTTlu17-fHV6b4xIOoKhWQ8Zg4Oo-QvYt6u-qiMZ5IUV5Rzrn%2BoFweagragjt5bMO7BZ6UM-BJbUceRW3-7lNasmiOwRb4qf0k2U5AsQn45ytjRj6CK3v6YuBFB-i%2BE00vDuJ8RLL"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\":\"noenviarspaaam@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/Api/Account/forgot-password",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"Account",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/Api/Account/refresh-token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"Account",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ShowTokensUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaGVTcGFtZXIiLCJqdGkiOiIzOTdkNTFkOC01ZjFkLTRhMmItYmY2Yi01ZDkyOThhMzE1YjgiLCJlbWFpbCI6Im5vZW52aWFyc3BhYWFtQGdtYWlsLmNvbSIsInVpZCI6IjE0MWVkMmNiLThhY2UtNDUxMy04Y2JiLWNhNmY4ZjRkMjA5ZCIsImlwIjoiMTcyLjMxLjI0MC4xIiwicm9sZXMiOiJVc2VyIiwiZXhwIjoxNjAxMTgyODA1LCJpc3MiOiJDb3JlSWRlbnRpdHkiLCJhdWQiOiJDb3JlSWRlbnRpdHlVc2VyIn0.J6LvrYpcorB8baNj5iX9rzg0x-nNvqaMHorac5OJARI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/Api/Account/tokens/141ed2cb-8ace-4513-8cbb-ca6f8f4d209d",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"Account",
+								"tokens",
+								"141ed2cb-8ace-4513-8cbb-ca6f8f4d209d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CatalogoAsistecia CRUD",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/Api/CatalogoAsistencia?PageNumber=1&PageSize=5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"CatalogoAsistencia"
+							],
+							"query": [
+								{
+									"key": "PageNumber",
+									"value": "1"
+								},
+								{
+									"key": "PageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/Api/CatalogoAsistencia/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"CatalogoAsistencia",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Descripcion\":\"Vacaciones\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/Api/CatalogoAsistencia",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"CatalogoAsistencia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\":1,\r\n    \"Descripcion\":\"Impostor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/Api/CatalogoAsistencia/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"CatalogoAsistencia",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJUaGVTcGFtZXIiLCJqdGkiOiIyMDQ1MDRjZS03ZWI5LTQzOTktYTRiYS1mMjRmODYxN2M1YmEiLCJlbWFpbCI6Im5vZW52aWFyc3BhYWFtQGdtYWlsLmNvbSIsInVpZCI6ImU5MTFhYzdkLTE1ODYtNGRjOS05ZWIxLTkwNjkyNjE4MGQxNyIsImlwIjoiMTcyLjMxLjE2MC4xIiwicm9sZXMiOiJVc2VyIiwiZXhwIjoxNjAwNDgxMzgyLCJpc3MiOiJDb3JlSWRlbnRpdHkiLCJhdWQiOiJDb3JlSWRlbnRpdHlVc2VyIn0.6GQUkK3hy55q9pMrmKXz4Ly4piWYuoGNN9fHBP0Ges8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:5001/Api/CatalogoAsistencia/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"Api",
+								"CatalogoAsistencia",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
